@@ -1,15 +1,13 @@
-# WHLatticeDemo
-简单的九宫格算法与使用
+//
+//  ViewController.m
+//  WHLatticeDemo
+//
+//  Created by 吴浩 on 2017/6/14.
+//  Copyright © 2017年 remember17. All rights reserved.
+//
 
- ![img](https://github.com/remember17/WHLatticeDemo/blob/master/img-folder/example1.gif)
+#import "ViewController.h"
 
-## 简单介绍
-简单九宫格算法，可以帮你自动计算间距，对控件(Button/Label/imageView...)或view进行有序排列。并不复杂.
-
-请下载demo查看
-
-###代码示例
-```objc
 // 宽度(自定义)
 #define PIC_WIDTH 70
 // 高度(自定义)
@@ -17,10 +15,31 @@
 // 列数(自定义)
 #define COL_COUNT 4
 
+@implementation ViewController {
+    NSArray<NSString *> *pictures;
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    [self loadImage];
+    [self addPictures];
+}
+
+/** 加载图片(本地) */
+- (void)loadImage {
+    NSMutableArray *picArray = [NSMutableArray array];
+    for (int i = 0; i < 16; i++) {
+        NSString *imageName = [NSString stringWithFormat:@"test_%d",i];
+        [picArray addObject:imageName];
+    }
+    pictures = picArray.copy;
+}
+
 /** 九宫格形式添加图片 */
 - (void)addPictures {
     
-    // 循环的次数代表将要创建图片个数，不要忘了这个for循环
+    // 在for循环中添加
     // pictures.count中的pictures是一个图片数组，代表着要添加多少个图片
     for (int i = 0; i < pictures.count; i++) {
         //创建图片
@@ -44,4 +63,5 @@
         [self.view addSubview:imageView];
     }
 }
-```
+
+@end
