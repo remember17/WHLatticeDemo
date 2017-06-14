@@ -1,14 +1,14 @@
 # WHLatticeDemo
 简单的九宫格算法与使用
 
- ![img](https://github.com/remember17/WHLatticeDemo/blob/master/img-folder/example1.gif)
+ ![img](https://github.com/remember17/ WHLatticeDemo/img-folder/example3.png)
 
 ## 简单介绍
 简单九宫格算法，可以帮你自动计算间距，对控件(Button/Label/imageView...)或view进行有序排列。并不复杂.
 
 请下载demo查看
 
-###代码示例
+### 代码示例
 ```objc
 // 宽度(自定义)
 #define PIC_WIDTH 70
