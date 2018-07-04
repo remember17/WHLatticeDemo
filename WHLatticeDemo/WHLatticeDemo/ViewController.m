@@ -4,7 +4,7 @@
 //
 //  Created by 吴浩 on 2017/6/14.
 //  Copyright © 2017年 remember17. All rights reserved.
-//
+//  https://github.com/remember17/WHLatticeDemo
 
 #import "ViewController.h"
 
@@ -21,7 +21,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     [self loadImage];
     [self addPictures];
 }
@@ -38,14 +37,12 @@
 
 /** 九宫格形式添加图片 */
 - (void)addPictures {
-    
     // 在for循环中添加
     // pictures.count中的pictures是一个图片数组，代表着要添加多少个图片
     for (int i = 0; i < pictures.count; i++) {
         //创建图片
         UIImageView *imageView = [[UIImageView alloc] init];
         imageView.image = [UIImage imageNamed:pictures[i]];
-        
         // 图片所在行
         NSInteger row = i / COL_COUNT;
         // 图片所在列
@@ -57,9 +54,7 @@
         // PointY
         CGFloat picY = margin + (PIC_HEIGHT + margin) * row;
         
-        // 图片的frame
         imageView.frame = CGRectMake(picX, picY, PIC_WIDTH, PIC_HEIGHT);
-        
         [self.view addSubview:imageView];
     }
 }
